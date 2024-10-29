@@ -4,7 +4,8 @@
   "main": "src/index.ts",
   "types": "src/index.d.ts",
   "scripts": {
-    "prisma:generate": "prisma generate"
+    "prisma:generate": "prisma generate",
+    "postinstall": "npm run prisma:generate"
   },
   "repository": {
     "type": "git",
