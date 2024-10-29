@@ -1,9 +1,8 @@
 {
   "name": "share-ur-save-common",
   "version": "1.0.0",
-  "main": "src/index.ts",
+  "main": "src/index.cts",
   "types": "src/index.d.ts",
-  "type": "module",
   "scripts": {
     "prisma:generate": "prisma generate --schema=./prisma/schema.prisma",
     "prisma:migrate": "prisma migrate dev --schema=./prisma/schema.prisma",
