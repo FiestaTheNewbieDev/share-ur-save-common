@@ -1,3 +1,13 @@
+generator client {
+  provider = "prisma-client-js"
+  output = "../node_modules/share-ur-save-common/prisma-client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
 model User {
   @@map("user")
 

@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "src/index.ts",
   "types": "src/index.d.ts",
-  "scripts": {},
+  "scripts": {
+    "prisma:generate": "prisma generate"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FiestaTheNewbieDev/share-ur-save-common"
