@@ -1,14 +1,24 @@
 {
   "name": "share-ur-save-common",
   "version": "1.0.0",
-  "main": "src/index.js",
-  "types": "src/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js"
+    }
+  },
   "type": "module",
   "scripts": {
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "build:esm": "tsc --project tsconfig.esm.json",
     "prisma:generate": "prisma generate --schema=./prisma/schema.prisma",
     "prisma:migrate": "prisma migrate dev --schema=./prisma/schema.prisma",
     "prisma:studio": "prisma studio --schema=./prisma/schema.prisma",
-    "postinstall": "prisma generate --schema=./prisma/schema.prisma"
+    "postinstall": "npm run build && prisma generate --schema=./prisma/schema.prisma"
   },
   "repository": {
     "type": "git",
