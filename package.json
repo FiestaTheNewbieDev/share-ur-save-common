@@ -1,7 +1,7 @@
 {
   "name": "share-ur-save-common",
   "version": "1.0.0",
-  "main": "src/index.cts",
+  "main": "src/index.cjs",
   "types": "src/index.d.ts",
   "scripts": {
     "prisma:generate": "prisma generate --schema=./prisma/schema.prisma",
