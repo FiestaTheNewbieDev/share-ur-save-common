@@ -1,7 +1,6 @@
 {
   "name": "share-ur-save-common",
   "version": "1.0.0",
-  "main": "src/index.js",
   "types": "src/index.d.ts",
   "type": "module",
   "scripts": {
