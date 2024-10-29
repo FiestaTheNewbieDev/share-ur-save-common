@@ -18,11 +18,9 @@
   "private": false,
   "license": "ISC",
   "description": "",
-  "peerDependencies": {
-    "@prisma/client": "^5.21.1"
-  },
   "dependencies": {
-    "prisma": "^5.21.1"
+    "prisma": "^5.21.1",
+    "@prisma/client": "^5.21.1"
   },
   "devDependencies": {
     "@types/node": "^22.8.2",

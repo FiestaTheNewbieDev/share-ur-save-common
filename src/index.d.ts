@@ -1,3 +1,3 @@
 export * from "./types/rawg";
 export * from "./types/game";
-export * from "@prisma/client";
+export * from "../node_modules/.prisma/client/index";
