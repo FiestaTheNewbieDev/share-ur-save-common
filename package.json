@@ -1,0 +1,19 @@
+{
+  "name": "share-ur-save-common",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FiestaTheNewbieDev/share-ur-save-common"
+  },
+  "keywords": [],
+  "author": "",
+  "private": false,
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^5.21.1",
+    "prima": "^0.0.1"
+  }
+}
