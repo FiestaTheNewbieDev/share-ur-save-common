@@ -1,4 +1,4 @@
-export type Game = {
+export type RawgGame = {
   id: number;
   slug: string;
   name: string;
@@ -26,7 +26,7 @@ export type Game = {
   }[];
 };
 
-export type GameDetails = {
+export type RawgGameDetails = {
   name_original: string;
   description: string;
   website: string;
