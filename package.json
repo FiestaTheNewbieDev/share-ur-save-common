@@ -4,7 +4,7 @@
   "main": "src/index.ts",
   "types": "src/index.d.ts",
   "scripts": {
-    "prisma:generate": "prisma generate",
+    "prisma:generate": "npx prisma generate",
     "postinstall": "npm run prisma:generate"
   },
   "repository": {
@@ -16,10 +16,12 @@
   "private": false,
   "license": "ISC",
   "description": "",
-  "devDependencies": {
+  "dependencies": {
     "@prisma/client": "^5.21.1",
+    "prisma": "^5.21.1"
+  },
+  "devDependencies": {
     "@types/node": "^22.8.2",
-    "prisma": "^5.21.1",
     "typescript": "^2.9.2"
   }
 }
