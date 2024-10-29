@@ -1,7 +1,3 @@
-import types from "./types";
-import { PrismaClient } from "@prisma/client";
-
-export default {
-    types,
-    PrismaClient,
-};
+export { PrismaClient } from "@prisma/client";
+export * from "./types/game";
+export * from "./types/rawg";
