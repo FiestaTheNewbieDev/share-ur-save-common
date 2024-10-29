@@ -1,9 +1,13 @@
 {
     "compilerOptions": {
+        "target": "ESNext",
+        "module": "CommonJS",
+        "strict": true,
+        "baseUrl": "./",
         "paths": {
             "share-ur-save": ["src/index.ts"],
-            "share-ur-save.types": ["src/types/index.ts"],
+            "share-ur-save.types": ["src/types/index.ts"]
         }
     },
-    "include": ["src/**/*"],
+    "include": ["src/**/*"]
 }
