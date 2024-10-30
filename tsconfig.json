@@ -1,19 +1,18 @@
 {
     "compilerOptions": {
-        "target": "ES2021",
+        "target": "ESNext",
+        "moduleResolution": "Node",
         "module": "ESNext",
-        "moduleResolution": "node",
-        "outDir": "./dist",
-        "declaration": true,
-        "declarationDir": "./dist/types",
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
         "strict": true,
-        "skipLibCheck": true,
         "esModuleInterop": true,
+        "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
-        "allowSyntheticDefaultImports": true
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true,
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "baseUrl": "./",
     },
-    "include": ["src"],
-    "exclude": ["node_modules", "dist"]
+    "include": ["src/**/*"]
 }

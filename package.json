@@ -1,40 +1,40 @@
 {
-  "name": "share-ur-save-common",
-  "version": "1.0.0",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/cjs/index.js",
-      "import": "./dist/esm/index.js"
+    "name": "share-ur-save-common",
+    "version": "1.0.0",
+    "main": "./dist/cjs/index.js",
+    "module": "./dist/esm/index.mjs",
+    "types": "./dist/esm/index.d.ts",
+    "exports": {
+        ".": {
+            "require": "./dist/cjs/index.js",
+            "import": "./dist/mjs/index.mjs",
+            "types": "./dist/esm/index.d.ts"
+        }
+    },
+    "scripts": {
+        "build": "npm run build:cjs && npm run build:esm",
+        "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+        "build:esm": "tsc --module esnext --outDir dist/esm",
+        "prisma:generate": "prisma generate --schema=./prisma/schema.prisma",
+        "prisma:migrate": "prisma migrate dev --schema=./prisma/schema.prisma",
+        "prisma:studio": "prisma studio --schema=./prisma/schema.prisma",
+        "postinstall": "npm run build && npm run prisma:generate"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/FiestaTheNewbieDev/share-ur-save-common"
+    },
+    "keywords": [],
+    "author": "",
+    "private": false,
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "@prisma/client": "^5.21.1",
+        "prisma": "^5.21.1"
+    },
+    "devDependencies": {
+        "@types/node": "^22.8.2",
+        "typescript": "^5.6.3"
     }
-  },
-  "type": "module",
-  "scripts": {
-    "build": "npm run build:cjs && npm run build:esm",
-    "build:cjs": "tsc --project tsconfig.cjs.json",
-    "build:esm": "tsc --project tsconfig.esm.json",
-    "prisma:generate": "prisma generate --schema=./prisma/schema.prisma",
-    "prisma:migrate": "prisma migrate dev --schema=./prisma/schema.prisma",
-    "prisma:studio": "prisma studio --schema=./prisma/schema.prisma",
-    "postinstall": "npm run build && prisma generate --schema=./prisma/schema.prisma"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FiestaTheNewbieDev/share-ur-save-common"
-  },
-  "keywords": [],
-  "author": "",
-  "private": false,
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "prisma": "^5.21.1",
-    "@prisma/client": "^5.21.1"
-  },
-  "devDependencies": {
-    "@types/node": "^22.8.2",
-    "typescript": "^2.9.2"
-  }
 }
