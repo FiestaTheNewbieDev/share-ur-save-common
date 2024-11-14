@@ -23,7 +23,7 @@
     "prisma:generate": "prisma generate --schema=./prisma/schema.prisma",
     "prisma:migrate": "prisma migrate dev --schema=./prisma/schema.prisma",
     "prisma:studio": "prisma studio --schema=./prisma/schema.prisma",
-    "prepare": "npm run build && npm run prisma:generate"
+    "prepare": "npm run build && npm run prisma:generate && cp -r prisma dist"
   },
   "repository": {
     "type": "git",
