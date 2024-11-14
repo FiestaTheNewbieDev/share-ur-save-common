@@ -1,18 +1,21 @@
 {
-    "compilerOptions": {
-        "target": "ESNext",
-        "moduleResolution": "Node",
-        "module": "ESNext",
-        "strict": true,
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
-        "declaration": true,
-        "declarationMap": true,
-        "sourceMap": true,
-        "rootDir": "./src",
-        "outDir": "./dist",
-        "baseUrl": "./",
-    },
-    "include": ["src/**/*"]
+  "compilerOptions": {
+    "target": "ESNext",
+    "moduleResolution": "Node",
+    "module": "ESNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "@prisma-client/*": ["prisma/client/*"]
+    }
+  },
+  "include": ["src/**/*"]
 }
