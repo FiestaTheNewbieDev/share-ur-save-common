@@ -1,8 +1,10 @@
 import { Game } from "../../../prisma/client";
-import { RawgGameDetails as GameDetails, RawgGame } from "../rawg";
+import { RawgGameDetails as GameDetails, Platform, RawgGame } from "../rawg";
 
 export type GameSearchResult = Game & {
-  rawgData: Pick<RawgGame, "id" | "slug" | "name" | "released" | "background_image">;
+  rawgData: Pick<RawgGame, "id" | "slug" | "name" | "released" | "background_image"> & {
+    platforms: Platform[];
+  };
 };
 
 export type CombinedGame = Game & {

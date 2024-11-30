@@ -61,7 +61,7 @@ type EsrbRating = {
   slug: string;
 };
 
-type Platform = {
+export type Platform = {
   id: number;
   slug: string;
   name: string;
