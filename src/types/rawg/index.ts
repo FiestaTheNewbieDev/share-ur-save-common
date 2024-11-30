@@ -72,7 +72,7 @@ type Requirements = {
   recommended: string;
 };
 
-type Ordering =
+export type Ordering =
   | "name"
   | "released"
   | "added"
