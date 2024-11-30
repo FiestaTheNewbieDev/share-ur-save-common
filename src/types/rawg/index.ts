@@ -71,3 +71,19 @@ type Requirements = {
   minimum: string;
   recommended: string;
 };
+
+type Ordering =
+  | "name"
+  | "released"
+  | "added"
+  | "created"
+  | "updated"
+  | "rating"
+  | "metacritic"
+  | "-name"
+  | "-released"
+  | "-added"
+  | "-created"
+  | "-updated"
+  | "-rating"
+  | "-metacritic";
