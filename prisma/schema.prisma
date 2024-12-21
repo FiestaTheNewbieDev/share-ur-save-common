@@ -17,10 +17,14 @@ model User {
   displayName String? @map("display_name")
   email String @unique
   password String?
+  pictureUrl String? @map("picture_url")
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
   deletedAt DateTime? @map("deleted_at")
+
+  saves Save[]
+  saveUpvotes SaveUpvote[]
 }
 
 model Game {
@@ -35,4 +39,48 @@ model Game {
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
   deletedAt DateTime? @map("deleted_at")
+
+  saves Save[]
+}
+
+model Save {
+  @@map("save")
+
+  uuid String @id @default(uuid())
+  authorUuid String @map("author_uuid")
+  gameUuid String @map("game_uuid")
+  
+  title String
+  description String?
+  downloadUrl String @map("download_url")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+
+  author User @relation(fields: [authorUuid], references: [uuid])
+  game Game @relation(fields: [gameUuid], references: [uuid])
+  saveUpvotes SaveUpvote[]
+}
+
+enum Upvote {
+  UP
+  DOWN
+}
+
+model SaveUpvote {
+  @@map("save_upvote")
+
+  userUuid String @map("user_uuid")
+  saveUuid String @map("save_uuid")
+
+  type Upvote
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userUuid], references: [uuid])
+  save Save @relation(fields: [saveUuid], references: [uuid])
+
+  @@id([userUuid, saveUuid])
 }
