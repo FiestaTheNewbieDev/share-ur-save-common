@@ -1,4 +1,3 @@
 export { PrismaClient, User, Game, Save, SaveUpvote } from "../prisma/client";
-export * from "./types/game";
-export * from "./types/rawg";
-export * from "./types/save";
+export * from "./types";
+export * from "./misc";
