@@ -1,4 +1,4 @@
-import { Save, User } from "prisma/client";
+import { Save, User } from "../../../prisma/client";
 
 
 export type AggregatedSave = Save & {
