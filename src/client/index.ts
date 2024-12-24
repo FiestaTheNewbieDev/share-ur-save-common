@@ -1,1 +1,3 @@
-export * from "./PrismaClient";
+import PrismaClient from "./PrismaClient";
+
+export { PrismaClient };
