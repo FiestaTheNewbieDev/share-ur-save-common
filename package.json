@@ -10,15 +10,10 @@
       "import": "./dist/mjs/index.js",
       "types": "./dist/esm/index.d.ts"
     },
-    "./client": {
-      "require": "./dist/cjs/client/index.js",
-      "import": "./dist/mjs/client/index.js",
-      "types": "./dist/esm/client/index.d.ts"
-    },
-    "./misc": {
-      "require": "./dist/cjs/misc/index.js",
-      "import": "./dist/mjs/misc/index.js",
-      "types": "./dist/esm/misc/index.d.ts"
+    "./*": {
+      "require": "./dist/cjs/*.js",
+      "import": "./dist/mjs/*.js",
+      "types": "./dist/esm/*.d.ts"
     }
   },
   "files": [
