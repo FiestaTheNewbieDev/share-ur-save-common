@@ -9,8 +9,8 @@ type ExtendedMiddlewareParams = Prisma.MiddlewareParams & {
 };
 
 export default class PrismaClient extends BasePrismaClient {
-  constructor() {
-    super();
+  constructor(options?: Prisma.PrismaClientOptions) {
+    super(options);
     this.$use(this.middleware);
   }
 
