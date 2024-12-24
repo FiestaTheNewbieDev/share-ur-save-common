@@ -1,10 +1,10 @@
-type AllowedHost = {
+export type AllowedHost = {
   label: string;
   domain: string;
   urlTemplate: RegExp;
 };
 
-type AllowedHosts = {
+export type AllowedHosts = {
   [key: string]: AllowedHost;
 };
 
