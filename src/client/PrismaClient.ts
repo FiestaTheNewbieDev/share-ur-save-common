@@ -53,7 +53,7 @@ export default class PrismaClient extends BasePrismaClient {
     return next(params);
   }
 
-  async findUnique<T>(model: keyof PrismaClient, args: ExtendedArgs<F>) {
+  async findUnique<T>(model: keyof PrismaClient, args: ExtendedArgs<any>) {
     return (this as any)[model].findUnique(args);
   }
 
