@@ -1,3 +1,1 @@
-import ALLOWED_HOSTS from "src/misc/allowedHosts";
-
-export { ALLOWED_HOSTS };
+export { default as ALLOWED_HOSTS } from './allowedHosts';
