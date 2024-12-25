@@ -25,6 +25,30 @@ model User {
 
   saves Save[]
   saveUpvotes SaveUpvote[]
+  userRoles UserRole[]
+}
+
+model UserRole {
+  @@map("user_role")
+
+  userUuid String @map("user_uuid")
+  roleId String @map("role_id")
+
+  assignedAt DateTime @default(now()) @map("assigned_at")
+
+  user User @relation(fields: [userUuid], references: [uuid])
+  role Role @relation(fields: [roleId], references: [id])
+
+  @@id([userUuid, roleId])
+}
+
+model Role {
+  @@map("role")
+
+  id String @id
+  name String @unique
+
+  userRoles UserRole[]
 }
 
 model Game {
