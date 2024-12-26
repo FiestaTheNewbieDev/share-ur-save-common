@@ -20,10 +20,11 @@ export default class PrismaClient extends BasePrismaClient {
     next: (params: ExtendedMiddlewareParams) => Promise<any>
   ) {
     const model = params.model;
-    const modelDefinition = this._dmmf.modelMap[model];
+    // @ts-expect-error Ignore the error for now
+    const modelDefinition = this._dmmf.modelMap[model]; //
 
     const hasDeletedAt = modelDefinition?.fields.some(
-      (field) => field.name === "deletedAt"
+      (field: any) => field.name === "deletedAt"
     );
 
     if (["findUnique", "findFirst", "findMany"].includes(params.action)) {
