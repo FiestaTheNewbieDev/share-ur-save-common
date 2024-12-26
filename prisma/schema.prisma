@@ -76,7 +76,9 @@ model Save {
   
   title String
   description String?
+  thumbnailUrl String @map("thumbnail_url")
   downloadUrl String @map("download_url")
+  upvotes Int @default(0)
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
