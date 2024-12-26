@@ -19,6 +19,13 @@ export default class PrismaClient extends BasePrismaClient {
     params: ExtendedMiddlewareParams,
     next: (params: ExtendedMiddlewareParams) => Promise<any>
   ) {
+    const model = params.model;
+    const modelDefinition = this._dmmf.modelMap[model];
+
+    const hasDeletedAt = modelDefinition?.fields.some(
+      (field) => field.name === "deletedAt"
+    );
+
     if (["findUnique", "findFirst", "findMany"].includes(params.action)) {
       const includeDeleted = params.args?.includeDeleted;
 
@@ -26,7 +33,7 @@ export default class PrismaClient extends BasePrismaClient {
         delete params.args.includeDeleted;
       }
 
-      if (!includeDeleted) {
+      if (!includeDeleted && hasDeletedAt) {
         if (!params.args) params.args = {};
         if (!params.args.where) params.args.where = {};
         params.args.where.deletedAt = null;
