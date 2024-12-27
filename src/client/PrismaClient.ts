@@ -9,6 +9,8 @@ type ExtendedArgs<T> = T & {
   hardDelete?: boolean;
 };
 
+const MODELS_WITH_SOFT_DELETE = ["User", "Game", "Save"];
+
 export default class PrismaClient extends BasePrismaClient {
   constructor(options?: Prisma.PrismaClientOptions) {
     super(options);
@@ -19,13 +21,7 @@ export default class PrismaClient extends BasePrismaClient {
     params: ExtendedMiddlewareParams,
     next: (params: ExtendedMiddlewareParams) => Promise<any>
   ) {
-    const model = params.model;
-    // @ts-expect-error Ignore the error for now
-    const modelDefinition = this._dmmf.modelMap[model]; //
-
-    const hasDeletedAt = modelDefinition?.fields.some(
-      (field: any) => field.name === "deletedAt"
-    );
+    const hasSoftDelete = MODELS_WITH_SOFT_DELETE.includes(params.model || "");
 
     if (["findUnique", "findFirst", "findMany"].includes(params.action)) {
       const includeDeleted = params.args?.includeDeleted;
@@ -34,7 +30,7 @@ export default class PrismaClient extends BasePrismaClient {
         delete params.args.includeDeleted;
       }
 
-      if (!includeDeleted && hasDeletedAt) {
+      if (!includeDeleted && hasSoftDelete) {
         if (!params.args) params.args = {};
         if (!params.args.where) params.args.where = {};
         params.args.where.deletedAt = null;
