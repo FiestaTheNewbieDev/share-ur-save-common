@@ -1,4 +1,4 @@
-export { User, UserRole, Role, Game, Save, SaveUpvote } from "../prisma/client";
+export { User, UserRole, Role, Game, Save, SaveUpvote, Upvote as UpvoteType } from "../prisma/client";
 
 export * from "./client";
 export * from "./misc";
