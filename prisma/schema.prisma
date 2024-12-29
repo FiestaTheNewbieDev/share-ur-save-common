@@ -26,6 +26,8 @@ model User {
   saves Save[]
   saveUpvotes SaveUpvote[]
   userRoles UserRole[]
+
+  @@index([username, email])
 }
 
 model UserRole {
@@ -65,6 +67,8 @@ model Game {
   deletedAt DateTime? @map("deleted_at")
 
   saves Save[]
+
+  @@index([name, slug])
 }
 
 model Save {
